@@ -1,3 +1,4 @@
+import en_core_web_sm
 import streamlit as st
 import requests
 import pandas as pd
@@ -32,8 +33,8 @@ else:
 @st.cache_resource
 @st.cache_resource
 def carregar_modelo_spacy():
-    """Carrega o modelo de NLP da memória."""
-    return spacy.load("en_core_web_sm")
+    """Carrega o modelo de NLP importado diretamente da memória."""
+    return en_core_web_sm.load()
 
 @st.cache_data(ttl=3600) # O cache dura 1 hora
 def extrair_dados_nasa(quantidade=30):
