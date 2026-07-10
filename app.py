@@ -7,16 +7,23 @@ from collections import Counter
 import matplotlib.pyplot as plt
 import seaborn as sns
 import os
-from dotenv import load_dotenv
+
 
 # ==============================================================================
 # CONFIGURAÇÃO INICIAL
 # ==============================================================================
-# Configura a página para ocupar toda a largura do monitor e define o título da aba
+
 st.set_page_config(page_title="NASA NLP Dashboard", layout="wide", page_icon="🚀")
 
-load_dotenv()
-API_KEY = os.getenv("NASA_API_KEY")
+# Sistema Híbrido de Chaves (Nuvem vs Local):
+if "NASA_API_KEY" in st.secrets:
+    # Se estiver rodando na Nuvem, pega a chave dos Segredos do Streamlit
+    API_KEY = st.secrets["NASA_API_KEY"]
+else:
+    # Se estiver rodando no seu computador (Local), usa o .env
+    from dotenv import load_dotenv
+    load_dotenv()
+    API_KEY = os.getenv("NASA_API_KEY")
 
 # ==============================================================================
 # FUNÇÕES COM CACHE (Para máxima performance)
