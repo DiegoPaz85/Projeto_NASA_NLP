@@ -30,16 +30,10 @@ else:
 # ==============================================================================
 @st.cache_resource
 @st.cache_resource
+@st.cache_resource
 def carregar_modelo_spacy():
-    """Tenta carregar o modelo. Se não existir no servidor, faz o download automático."""
-    import spacy.cli
-    try:
-        # Tenta carregar o modelo diretamente
-        return spacy.load("en_core_web_sm")
-    except OSError:
-        # Se der erro (modelo não encontrado), baixa e carrega
-        spacy.cli.download("en_core_web_sm")
-        return spacy.load("en_core_web_sm")
+    """Carrega o modelo de NLP da memória."""
+    return spacy.load("en_core_web_sm")
 
 @st.cache_data(ttl=3600) # O cache dura 1 hora
 def extrair_dados_nasa(quantidade=30):
