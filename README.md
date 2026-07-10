@@ -66,7 +66,7 @@ O projeto foi estruturado em um pipeline de 4 etapas principais:
 
 Durante o desenvolvimento do projeto, o modelo identificou comportamentos interessantes no padrão de escrita da agência:
 
-    Mapeamento de Tópicos Perfeito: O algoritmo não supervisionado (NMF) separou com precisão textos focados em Formação Estelar (nebulosas, poeira), Eventos Atmosféricos (meteoros) e Exploração de Marte (rovers, dunas).
+Mapeamento de Tópicos Perfeito: O algoritmo não supervisionado (NMF) separou com precisão textos focados em Formação Estelar (nebulosas, poeira), Eventos Atmosféricos (meteoros) e Exploração de Marte (rovers, dunas).
 
-    O Falso Positivo Semântico: Devido ao contexto formal das publicações da NASA, termos como "Sun" (Sol) e "Solar System" são frequentemente classificados pela IA padrão como Organizações Corporativas, exigindo técnicas de Fine-Tuning para correção em fases posteriores do projeto.
+O Falso Positivo Semântico: Devido ao contexto formal das publicações da NASA, termos como "Sun" (Sol) e "Solar System" são frequentemente classificados pela IA padrão como Organizações Corporativas, exigindo técnicas de Fine-Tuning para correção em fases posteriores do projeto.
 
